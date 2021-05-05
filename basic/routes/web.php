@@ -14,7 +14,11 @@ Route::get('/home', function () {
 
 Route::get('/about', function () {
     return view('about');
-}) -> middleware('age');
+}); //-> middleware('age');
 
-//Route::get('/about', [AboutController::class, 'index']);
-Route::get('/contact', [ContactController::class, 'index']);
+Route::get('/products', function () {
+     return view('products');
+}) -> name('prod');
+
+// Route::get('/products', [ProductsController::class, 'index']);
+Route::get('/contact', [ContactController::class, 'index']) -> name('contact');
