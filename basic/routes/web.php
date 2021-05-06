@@ -22,3 +22,6 @@ Route::get('/products', function () {
 
 // Route::get('/products', [ProductsController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']) -> name('contact');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
