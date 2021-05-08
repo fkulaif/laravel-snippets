@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AboutController;
-
+use App\Models\User;
 
 Route::get('/', function () {
     return view('home');
@@ -17,11 +17,12 @@ Route::get('/about', function () {
 }); //-> middleware('age');
 
 Route::get('/products', function () {
-     return view('products');
-}) -> name('prod');
+    return view('products');
+})->name('prod');
 
 // Route::get('/products', [ProductsController::class, 'index']);
-Route::get('/contact', [ContactController::class, 'index']) -> name('contact');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    $users = User::all();
+    return view('dashboard', compact('users'));
 })->name('dashboard');
