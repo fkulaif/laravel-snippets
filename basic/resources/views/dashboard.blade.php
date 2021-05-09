@@ -23,17 +23,20 @@
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Created At</th>
+                            <th scope="col">More info</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @php($i = 1);
+                        @php($i = 1)
                         @foreach($users as $user)
                         <tr>
+                            <!-- ORM Eloquent Acessors -->
                             <!-- <th scope="row">{{ $user->id }}</th> -->
                             <th scope="row">{{ $i++ }}</th>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->created_at->diffForHumans() }}</td>
+                            <td>{{ $user->created_at }}</td>
                         </tr>
                         @endforeach
                     </tbody>
