@@ -3,8 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AboutController;
-use App\Models\User;
-// ORM Eloquent way
+use App\Models\User; // ORM Eloquent way
+
 //use Illuminate\Support\Facades\DB;
 //use Illuminate\Support\Carbon;
 
